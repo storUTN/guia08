@@ -15,6 +15,15 @@ public class Tarea {
 	public void asignarEmpleado(Empleado e) {
 		// si la tarea ya tiene un empleado asignado
 		// y tiene fecha de finalizado debe lanzar una excepcion
+		try {
+		if(empleadoAsignado!= null && fechaFin!= null) {
+			throw new Exception("Error: la tarea ya fue finalizada");
+		}
+		empleadoAsignado= e;
+		}
+		catch(Exception g) {
+			System.out.println(g.getMessage());
+		}
 	}
 
 	public Integer getId() {
